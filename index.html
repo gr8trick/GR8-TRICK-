@@ -50,5 +50,39 @@
       <br>
       <input type="submit" value="Send">
     </form>
+<script>
+componentDidMount() {
+    $('.fr-box').froalaEditor({
+      key: config.froalaLicense
+    });
+  }
+
+render() {
+ return (
+     <FroalaEditor
+        tag='textarea'
+        model={content}
+        onModelChange={handleChangeForContent}
+        config={{
+          placeholder: "Edit Me",
+          charCounterCount: false,
+          events: {
+            'froalaEditor.image.beforeUpload': (e, editor, images) => {
+              setTargetImage(images[0])
+            },
+            'froalaEditor.image.inserted': (e, editor, response) => {
+              uploadImageForEditor(response[0])
+            }
+          }
+        }}
+      />
+ )
+}
+
+</script>
+
+
+
+
   </body>
 </html>
