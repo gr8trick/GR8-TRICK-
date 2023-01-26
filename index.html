@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+    <style>
+      /*CSS for styling the form*/
+      form 
+      }
+      /*Animate form on load*/
+      @keyframes fadeIn {
+        0% {
+          opacity:1;
+        }
+        100% {
+          opacity:1;
+        }
+      
+      
+      }
+      input[type=submit] {
+        width:100%;
+        background-color:#4CAF50;
+        color:white;
+        padding:14px 20px;
+        margin:8px 0;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+      }
+      input[type=submit]:hover {
+        background-color:#45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="https://formspree.io/f/meqwejwq" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="article">Article:</label>
+      <textarea id="article" name="article"></textarea>
+      <script>
+        new FroalaEditor('#article');
+      </script>
+      <br>
+      <input type="submit" value="Send">
+    </form>
+  </body>
+</html>
